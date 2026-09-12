@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -43,7 +46,39 @@
       position: relative;
       width: 100%;
     }
+    /* ─── GOOGLE PLAY LINK ───────────────────────────────── */
 
+    .play-link {
+      position: absolute;
+      top: 99%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-family: 'Kreon', serif;
+      font-size: 24px;
+      font-weight: 500;
+
+      color: white;
+      text-decoration: none;
+
+      pointer-events: all;
+      white-space: nowrap;
+    }
+
+    .play-link:hover {
+      opacity: 0.8;
+    }
+
+    .play-link img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+    
     /* ─── EMBED BLOCKS ───────────────────────────────────────── */
     .embed-block {
       position: absolute;
@@ -70,21 +105,7 @@
       overflow: hidden;
     }
 
-    /* ─── EDIT HINT (remove before publishing) ───────────────── */
-    #edit-hint {
-      position: fixed;
-      bottom: 16px;
-      right: 16px;
-      background: rgba(0,0,0,0.75);
-      color: #fff;
-      font-family: monospace;
-      font-size: 12px;
-      padding: 10px 14px;
-      border-radius: 6px;
-      z-index: 999;
-      line-height: 1.6;
-      max-width: 300px;
-    }
+    
     #edit-hint strong { color: #f0c040; }
   </style>
 </head>
@@ -100,62 +121,15 @@
   <!-- ② OVERLAY — embeds go inside here, positioned by % from top -->
   <div id="overlay">
 
-    <!-- ══════════════════════════════════════════════
-         ITCH.IO EMBED
-         • top: how far from the top of the image (in %)
-         • left / width: horizontal position & size (in %)
-         • Paste your itch.io iframe src below
-    ═══════════════════════════════════════════════ -->
-    <div class="embed-block itchio-embed" style="
-      top: 28%;          /* ← adjust vertical position */
-      left: 50%;         /* ← adjust horizontal position */
-      transform: translateX(-50%);
-      width: 42%;        /* ← adjust width */
-    ">
-      <iframe
-        src="https://itch.io/embed/YOUR_GAME_ID"
-        width="100%"
-        height="167"
-        frameborder="0">
-        <a href="https://itch.io/YOUR_GAME_LINK">Your Game on itch.io</a>
-      </iframe>
-    </div>
-
-
-    <!-- ══════════════════════════════════════════════
-         VIDEO EMBED #1  (YouTube)
-         Replace VIDEO_ID with your YouTube video ID
-    ═══════════════════════════════════════════════ -->
-    <div class="embed-block video-embed" style="
-      top: 55%;          /* ← adjust vertical position */
-      left: 8%;          /* ← adjust horizontal position */
-      width: 38%;        /* ← adjust width */
-      aspect-ratio: 16/9;
-    ">
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID_1"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-
-    <!-- ══════════════════════════════════════════════
-         VIDEO EMBED #2  (YouTube)
-         Duplicate this block for more videos
-    ═══════════════════════════════════════════════ -->
-    <div class="embed-block video-embed" style="
-      top: 55%;
-      left: 54%;
-      width: 38%;
-      aspect-ratio: 16/9;
-    ">
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID_2"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <a
+      class="play-link"
+      href="https://play.google.com/store/apps/details?id=com.alcheringa.jestercaster&hl=en_IN"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      JESTER CASTER / ALCHERINGA 2026
+      <img src="icon.png" alt="Google Play">
+    </a>
 
 
     <!-- ══════════════════════════════════════════════
@@ -178,15 +152,7 @@
 </div><!-- /page -->
 
 
-<!-- EDIT HINT — delete this block when you're done tweaking -->
-<div id="edit-hint">
-  <strong>How to customise:</strong><br>
-  1. Replace <code>YOUR_FIGMA_IMAGE.png</code><br>
-  2. Replace itch.io game ID / link<br>
-  3. Replace <code>VIDEO_ID_1</code>, <code>VIDEO_ID_2</code><br>
-  4. Adjust <code>top / left / width %</code> values<br>
-  5. Delete this hint block
-</div>
+
 
 
 <script>
